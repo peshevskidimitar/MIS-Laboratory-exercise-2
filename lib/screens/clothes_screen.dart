@@ -109,7 +109,12 @@ class _ClothesScreenState extends State<ClothesScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: ElevatedButton(
                   onPressed: _navigateToShoppingCart,
-                  child: const Icon(Icons.shopping_cart)))
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    color: Colors.red,
+                  )))
         ],
       ),
       body: ListView.builder(
@@ -123,11 +128,11 @@ class _ClothesScreenState extends State<ClothesScreen> {
                 ),
                 title: Text(
                   "${_clothes[index].name} \$${_clothes[index].price.toStringAsFixed(2)}",
-                  style: const TextStyle(fontSize: 16, color: Colors.red),
+                  style: const TextStyle(fontSize: 16, color: Colors.blue),
                 ),
                 subtitle: Text(
                   _clothes[index].description,
-                  style: const TextStyle(fontSize: 14, color: Colors.red),
+                  style: const TextStyle(fontSize: 14, color: Colors.blue),
                   overflow: TextOverflow.fade,
                 ),
                 trailing: Wrap(
@@ -137,21 +142,30 @@ class _ClothesScreenState extends State<ClothesScreen> {
                       onPressed: () => _editClothing(index, _clothes[index]),
                       mini: true,
                       backgroundColor: Colors.green,
-                      child: const Icon(Icons.edit),
+                      child: const Icon(
+                        Icons.edit,
+                        color: Colors.red,
+                      ),
                     ),
                     FloatingActionButton(
                       heroTag: "delete$index",
                       onPressed: () => _removeClothingFromList(index),
                       mini: true,
                       backgroundColor: Colors.green,
-                      child: const Icon(Icons.delete),
+                      child: const Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                      ),
                     ),
                     FloatingActionButton(
                       heroTag: "add_shopping_cart$index",
                       onPressed: () => _addToShoppingCart(index),
                       mini: true,
                       backgroundColor: Colors.green,
-                      child: const Icon(Icons.add_shopping_cart),
+                      child: const Icon(
+                        Icons.add_shopping_cart,
+                        color: Colors.red,
+                      ),
                     ),
                   ],
                 ),
@@ -162,7 +176,10 @@ class _ClothesScreenState extends State<ClothesScreen> {
         heroTag: "add",
         onPressed: _addClothing,
         backgroundColor: Colors.green,
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.red,
+        ),
       ),
     );
   }

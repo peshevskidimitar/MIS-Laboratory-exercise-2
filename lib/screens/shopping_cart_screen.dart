@@ -39,11 +39,11 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 ),
                 title: Text(
                   "${widget.clothes[index].name} \$${widget.clothes[index].price.toStringAsFixed(2)}",
-                  style: const TextStyle(fontSize: 16, color: Colors.red),
+                  style: const TextStyle(fontSize: 16, color: Colors.blue),
                 ),
                 subtitle: Text(
                   widget.clothes[index].description,
-                  style: const TextStyle(fontSize: 14, color: Colors.red),
+                  style: const TextStyle(fontSize: 14, color: Colors.blue),
                   overflow: TextOverflow.fade,
                 ),
                 trailing: FloatingActionButton(
@@ -55,7 +55,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                     });
                   },
                   backgroundColor: Colors.green,
-                  child: const Icon(Icons.remove_shopping_cart),
+                  child: const Icon(Icons.remove_shopping_cart, color: Colors.red,),
                 ),
               ),
             );
@@ -67,7 +67,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
           });
         },
         backgroundColor: Colors.green,
-        child: const Icon(Icons.shopping_cart_checkout),
+        child: const Icon(Icons.shopping_cart_checkout, color: Colors.red,),
       ),
     );
   }
